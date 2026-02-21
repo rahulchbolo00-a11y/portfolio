@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Avnish Kumar — QA Engineer specializing in Investment Banking & Wealth Management. 2+ years at Coforge on SEI platform. Selenium, Java, API Testing."/>
+<meta name="keywords" content="QA Engineer, Test Automation, Selenium, Investment Banking, SEI Wealth, Coforge, New Delhi"/>
+<meta property="og:title" content="Avnish Kumar — QA Engineer | Investment Banking"/>
+<meta property="og:description" content="2+ years in SEI Investment Banking QA. 90%+ defect detection. Selenium, Java, API, SQL."/>
+<meta property="og:type" content="website"/>
+<title>Avnish Kumar — QA Engineer | Investment Banking</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+/* ─── VARIABLES ─── */
+:root {
+  --navy:       #080d18;
+  --navy-mid:   #0f1624;
+  --navy-card:  #1b2538;
+  --navy-hover: #16202e;
+  --gold:       #c9a84c;
+  --gold-light: #e8cb7a;
+  --gold-glow:  rgba(201,168,76,0.28);
+  --gold-pale:  rgba(201,168,76,0.10);
+  --cream:      #f2ece0;
+  --cream-dim:  #9e9480;
+  --white:      #ffffff;
+  --border:     rgba(201,168,76,0.22);
+  --border-dim: rgba(255,255,255,0.06);
+  --green:      #22c55e;
+  --red:        #ef4444;
+}
+
+/* ─── RESET ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--navy);color:var(--cream);
+  font-family:'Jost',sans-serif;font-weight:300;
+  font-size:15px;line-height:1.8;overflow-x:hidden;cursor:none;
+}
+
+/* ─── CUSTOM CURSOR ─── */
+#cur,#cur-ring{position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);border-radius:50%;}
+#cur{width:11px;height:11px;background:var(--gold);transition:width .18s,height .18s;mix-blend-mode:difference;}
+#cur-ring{width:34px;height:34px;border:1px solid var(--gold);z-index:9998;opacity:.55;transition:width .22s,height .22s;}
+body:not(:hover) #cur,body:not(:hover) #cur-ring{opacity:0;}
+
+/* ─── BACKGROUND ─── */
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.45;
+  background:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+}
+.orb{position:fixed;border-radius:50%;filter:blur(150px);pointer-events:none;z-index:0;animation:orb 16s ease-in-out infinite;}
+.o1{width:650px;height:650px;background:rgba(201,168,76,.055);top:-180px;right:-180px;}
+.o2{width:480px;height:480px;background:rgba(201,168,76,.035);bottom:-80px;left:-130px;animation-delay:-8s;}
+@keyframes orb{0%,100%{transform:translate(0,0);}50%{transform:translate(18px,-26px);}}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--navy);}
+::-webkit-scrollbar-thumb{background:var(--gold);}
+
+/* ─── SCROLL FADE ─── */
+.fs{
+  opacity:0;transform:translateY(36px);
+  transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1);
+}
+.fs.in{opacity:1;transform:none;}
+.fs.out{opacity:0;transform:translateY(-26px);transition:opacity .45s ease,transform .45s ease;}
+
+/* Stagger children */
+.stg > .si{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+.fs.in .stg > .si:nth-child(1){opacity:1;transform:none;transition-delay:.04s;}
+.fs.in .stg > .si:nth-child(2){opacity:1;transform:none;transition-delay:.10s;}
+.fs.in .stg > .si:nth-child(3){opacity:1;transform:none;transition-delay:.16s;}
+.fs.in .stg > .si:nth-child(4){opacity:1;transform:none;transition-delay:.22s;}
+.fs.in .stg > .si:nth-child(5){opacity:1;transform:none;transition-delay:.28s;}
+.fs.in .stg > .si:nth-child(6){opacity:1;transform:none;transition-delay:.34s;}
+.fs.in .stg > .si:nth-child(n+7){opacity:1;transform:none;transition-delay:.40s;}
+
+/* Edu bar trigger */
+.fs.in .bar-fill{transform:scaleX(1) !important;}
+
+/* ─── MICRO ANIMATIONS ─── */
+.pulse-green{animation:pg 2.5s ease-in-out infinite;}
+@keyframes pg{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.3);}50%{box-shadow:0 0 0 8px rgba(34,197,94,0);}}
+.blink{animation:bk 1.4s ease-in-out infinite;}
+@keyframes bk{0%,100%{opacity:1;}50%{opacity:.18;}}
+.shake{display:inline-block;animation:sk 4s ease-in-out infinite;}
+@keyframes sk{0%,82%,100%{transform:rotate(0);}85%{transform:rotate(-13deg);}89%{transform:rotate(13deg);}93%{transform:rotate(-7deg);}96%{transform:rotate(5deg);}}
+.wig{animation:wg 5s ease-in-out infinite;}
+@keyframes wg{0%,87%,100%{transform:rotate(0) scale(1);}90%{transform:rotate(-4deg) scale(1.06);}94%{transform:rotate(3deg) scale(1.06);}}
+.float{animation:fl 3.5s ease-in-out infinite;}
+@keyframes fl{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
+.shimmer-bar{background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold));background-size:200% auto;animation:shim 3s linear infinite;}
+@keyframes shim{0%{background-position:200% center;}100%{background-position:-200% center;}}
+.dl-bounce{animation:dlb 2s ease-in-out infinite;}
+@keyframes dlb{0%,100%{transform:translateY(0);}50%{transform:translateY(3px);}}
+
+/* ─── BADGES ─── */
+.badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 13px;border-radius:100px;
+  font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;border:1px solid;
+}
+.bg-live{border-color:rgba(34,197,94,.4);background:rgba(34,197,94,.08);color:var(--green);}
+.bg-gold{border-color:var(--border);background:var(--gold-pale);color:var(--gold);}
+.dot-live{width:7px;height:7px;border-radius:50%;background:var(--green);}
+.wbadge{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--gold-pale);border:1px solid var(--border);border-radius:100px;
+  padding:2px 9px;font-size:10px;color:var(--gold);
+  margin-left:8px;vertical-align:middle;
+}
+.card-badge{
+  position:absolute;top:13px;right:13px;
+  font-size:9px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:3px 10px;border-radius:100px;
+  background:rgba(201,168,76,.1);color:var(--gold);border:1px solid var(--border);
+}
+
+/* ─── BUTTONS ─── */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 26px;font-family:'Jost',sans-serif;
+  font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:500;
+  text-decoration:none;transition:all .22s;cursor:pointer;border:none;
+}
+.btn-g{background:var(--gold);color:var(--navy);}
+.btn-g:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 32px var(--gold-glow);}
+.btn-o{background:transparent;color:var(--cream-dim);border:1px solid var(--border);}
+.btn-o:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
+.btn-gh{background:rgba(255,255,255,.04);color:var(--cream-dim);border:1px solid var(--border-dim);}
+.btn-gh:hover{background:rgba(255,255,255,.08);color:var(--cream);}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0 64px;height:70px;
+  background:rgba(8,13,24,.93);backdrop-filter:blur(28px);
+  border-bottom:1px solid var(--border);transition:height .3s;
+}
+nav.small{height:58px;}
+.n-brand{display:flex;flex-direction:column;line-height:1.15;}
+.n-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--white);}
+.n-sub{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.n-links{display:flex;gap:30px;}
+.n-links a{
+  font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
+  text-decoration:none;color:var(--cream-dim);transition:color .2s;
+  position:relative;padding-bottom:3px;
+}
+.n-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width .3s;}
+.n-links a:hover{color:var(--gold);}
+.n-links a:hover::after{width:100%;}
+
+/* ─── HERO ─── */
+#hero{
+  position:relative;z-index:1;min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;padding:88px 64px 56px;gap:56px;
+}
+.h-badge-row{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap;}
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(42px,5.3vw,74px);
+  font-weight:700;line-height:1.05;letter-spacing:-.5px;color:var(--white);
+}
+h1 em{font-style:italic;color:var(--gold);font-weight:400;}
+.h-desc{font-size:15px;color:var(--cream-dim);margin-top:20px;max-width:480px;line-height:1.9;}
+.h-ctas{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap;}
+.h-stats{
+  display:flex;margin-top:42px;
+  border:1px solid var(--border);background:var(--navy-card);
+}
+.hst{flex:1;padding:16px 18px;border-right:1px solid var(--border-dim);transition:background .3s;}
+.hst:last-child{border-right:none;}
+.hst:hover{background:var(--navy-hover);}
+.hst-n{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--gold);line-height:1;}
+.hst-l{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--cream-dim);margin-top:4px;}
+
+/* Dashboard card */
+.dash{background:var(--navy-card);border:1px solid var(--border);position:relative;overflow:hidden;}
+.dash::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold-light),transparent);}
+.dash-hdr{padding:20px 26px 14px;border-bottom:1px solid var(--border-dim);display:flex;justify-content:space-between;align-items:center;}
+.dash-title{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.dash-live{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--green);}
+.dash-ld{width:6px;height:6px;border-radius:50%;background:var(--green);}
+.mrow{display:flex;justify-content:space-between;align-items:center;padding:13px 26px;border-bottom:1px solid var(--border-dim);transition:background .2s;}
+.mrow:last-of-type{border-bottom:none;}
+.mrow:hover{background:rgba(201,168,76,.04);}
+.ml{font-size:12px;color:var(--cream-dim);display:flex;align-items:center;gap:8px;}
+.mv{font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);font-weight:600;}
+.mv small{font-family:'Jost',sans-serif;font-size:10px;color:var(--cream-dim);margin-left:3px;}
+.mtag{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:100px;}
+.tag-g{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.3);}
+.tag-o{background:var(--gold-pale);color:var(--gold);border:1px solid var(--border);}
+.dash-foot{padding:13px 26px;background:rgba(201,168,76,.06);border-top:1px solid var(--border-dim);display:flex;align-items:center;gap:10px;font-size:11px;color:var(--cream-dim);}
+
+/* ─── SECTION SHELL ─── */
+.sec{position:relative;z-index:1;padding:86px 64px;}
+.sec.alt{background:var(--navy-mid);}
+.sec-hd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;padding-bottom:20px;border-bottom:1px solid var(--border-dim);}
+.sec-num{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3.3vw,46px);font-weight:600;line-height:1.1;color:var(--white);}
+h2 em{font-style:italic;color:var(--gold);font-weight:400;}
+.sec-sub{font-size:13px;color:var(--cream-dim);max-width:280px;text-align:right;line-height:1.7;}
+
+/* ─── EXPERTISE GRID ─── */
+.ex-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-dim);border:1px solid var(--border-dim);}
+.ex-cell{background:var(--navy-mid);padding:32px 28px;position:relative;overflow:hidden;transition:background .3s;cursor:default;}
+.ex-cell:hover{background:var(--navy-card);}
+.ex-cell::after{content:'';position:absolute;bottom:0;left:26px;right:26px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .3s;}
+.ex-cell:hover::after{opacity:1;}
+.ex-icon{font-size:26px;margin-bottom:11px;display:block;transition:transform .3s;}
+.ex-cell:hover .ex-icon{transform:scale(1.18) rotate(-5deg);}
+.ex-no{font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--gold);opacity:.12;font-weight:300;line-height:1;margin-bottom:8px;}
+.ex-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--white);margin-bottom:8px;}
+.ex-body{font-size:12px;color:var(--cream-dim);line-height:1.8;}
+.ex-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:15px;}
+.etag{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:3px 9px;border:1px solid var(--border);color:var(--cream-dim);transition:all .2s;}
+.ex-cell:hover .etag{border-color:rgba(201,168,76,.4);color:var(--gold);}
+
+/* ─── TICKER ─── */
+.ticker{position:relative;z-index:1;background:var(--navy-hover);border-top:1px solid var(--border-dim);border-bottom:1px solid var(--border-dim);overflow:hidden;display:flex;}
+.t-chip{background:var(--gold);color:var(--navy);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;padding:0 20px;display:flex;align-items:center;white-space:nowrap;flex-shrink:0;z-index:2;}
+.t-track{overflow:hidden;flex:1;position:relative;}
+.t-track::after{content:'';position:absolute;right:0;top:0;bottom:0;width:70px;background:linear-gradient(-90deg,var(--navy-hover),transparent);z-index:2;}
+.t-inner{display:flex;animation:ticker 30s linear infinite;width:max-content;}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.ti{display:flex;align-items:center;padding:14px 24px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cream-dim);border-right:1px solid var(--border-dim);white-space:nowrap;gap:8px;}
+.td{width:4px;height:4px;background:var(--gold);border-radius:50%;opacity:.4;}
+
+/* ─── EXPERIENCE ─── */
+.exp-layout{display:grid;grid-template-columns:240px 1fr;gap:50px;align-items:start;}
+.exp-co-card{background:var(--navy-card);border:1px solid var(--border);padding:26px;position:relative;}
+.exp-co-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);}
+.exp-co-name{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;color:var(--white);}
+.exp-co-loc{font-size:11px;color:var(--cream-dim);letter-spacing:1px;margin-top:4px;}
+.exp-dur{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:14px;padding-top:14px;border-top:1px solid var(--border-dim);}
+.exp-curr{display:inline-flex;align-items:center;gap:6px;margin-top:12px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.35);border-radius:100px;padding:4px 12px;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--green);}
+.exp-quote{margin-top:18px;font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:var(--cream-dim);line-height:1.7;border-left:2px solid var(--gold);padding-left:13px;}
+.exp-role{font-family:'Playfair Display',serif;font-size:24px;font-weight:600;color:var(--white);margin-bottom:24px;}
+.exp-rows{display:flex;flex-direction:column;}
+.exp-row{display:flex;gap:15px;padding:15px 0;border-bottom:1px solid var(--border-dim);transition:padding-left .3s,background .2s;cursor:default;}
+.exp-row:last-child{border-bottom:none;}
+.exp-row:hover{padding-left:8px;background:rgba(201,168,76,.025);}
+.exp-dia{width:16px;height:16px;border:1px solid var(--gold);transform:rotate(45deg);flex-shrink:0;margin-top:4px;transition:background .22s;}
+.exp-row:hover .exp-dia{background:var(--gold);}
+.exp-txt{font-size:13px;color:var(--cream-dim);line-height:1.8;}
+.exp-txt strong{color:var(--gold-light);font-weight:500;}
+.ach-row{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;border:1px solid var(--border);background:var(--navy-card);}
+.ach-cell{padding:24px 20px;border-right:1px solid var(--border-dim);position:relative;}
+.ach-cell:last-child{border-right:none;}
+.ach-cell::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);opacity:.5;}
+.ach-em{font-size:20px;margin-bottom:7px;display:block;}
+.ach-n{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--gold);line-height:1;}
+.ach-l{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cream-dim);margin-top:6px;}
+
+/* ─── SKILLS ─── */
+.sk-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.sk-card{background:var(--navy-card);border:1px solid var(--border-dim);padding:28px;position:relative;transition:border-color .3s;}
+.sk-card:hover{border-color:var(--border);}
+.sk-badge{position:absolute;top:-1px;right:16px;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 11px;background:var(--navy);border:1px solid var(--border);color:var(--gold);}
+.sk-hdr{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.sk-em{font-size:21px;}
+.sk-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--white);}
+.sk-tags{display:flex;flex-wrap:wrap;gap:7px;}
+.stag{font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:5px 11px;border:1px solid var(--border-dim);color:var(--cream-dim);background:rgba(255,255,255,.02);transition:all .2s;cursor:default;}
+.stag:hover{border-color:rgba(201,168,76,.5);color:var(--gold);background:var(--gold-pale);}
+
+/* ─── DOMAIN ─── */
+.dm-layout{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;}
+.dm-intro{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;font-style:italic;color:var(--cream-dim);line-height:1.8;}
+.dm-intro strong{color:var(--gold);font-style:normal;font-weight:600;}
+.dm-list{display:flex;flex-direction:column;}
+.dm-row{display:flex;align-items:center;gap:15px;padding:14px 0;border-bottom:1px solid var(--border-dim);transition:padding-left .3s;cursor:default;}
+.dm-row:hover{padding-left:8px;}
+.dm-gem{font-size:17px;flex-shrink:0;transition:transform .3s;}
+.dm-row:hover .dm-gem{transform:rotate(18deg) scale(1.2);}
+.dm-name{font-family:'Playfair Display',serif;font-size:15px;color:var(--white);font-weight:400;}
+.dm-sub{font-size:11px;color:var(--cream-dim);margin-top:2px;}
+
+/* ─── RESUME SECTION ─── */
+.resume-card{
+  background:var(--navy-card);border:1px solid var(--border);
+  padding:48px;position:relative;overflow:hidden;
+  display:grid;grid-template-columns:1fr auto;gap:44px;align-items:center;
+}
+.resume-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.resume-card::after{content:'📄';position:absolute;right:230px;top:50%;transform:translateY(-50%);font-size:96px;opacity:.04;}
+.r-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.r-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,36px);font-weight:700;color:var(--white);line-height:1.2;margin-bottom:12px;}
+.r-desc{font-size:14px;color:var(--cream-dim);line-height:1.8;max-width:480px;}
+.r-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px;}
+.r-tag{display:flex;align-items:center;gap:6px;background:var(--gold-pale);border:1px solid var(--border);border-radius:100px;padding:4px 13px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);}
+.r-btns{display:flex;flex-direction:column;gap:12px;min-width:185px;}
+
+/* Download button */
+.btn-dl{
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  padding:15px 26px;background:var(--gold);color:var(--navy);
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;
+  border:none;cursor:pointer;font-family:'Jost',sans-serif;
+  transition:all .24s;position:relative;overflow:hidden;
+}
+.btn-dl::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transform:translateX(-100%);transition:transform .55s;}
+.btn-dl:hover::before{transform:translateX(100%);}
+.btn-dl:hover{background:var(--gold-light);transform:translateY(-3px);box-shadow:0 12px 40px var(--gold-glow);}
+.btn-dl:active{transform:translateY(-1px);}
+
+/* Download count badge */
+.dl-count-wrap{text-align:center;margin-top:8px;}
+.dl-count{font-size:11px;color:var(--cream-dim);}
+.dl-count b{color:var(--gold);}
+
+/* ─── EDUCATION ─── */
+.edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-dim);border:1px solid var(--border-dim);}
+.edu-cell{background:var(--navy-mid);padding:36px 30px;transition:background .3s;}
+.edu-cell:hover{background:var(--navy-card);}
+.edu-em{font-size:28px;margin-bottom:12px;display:block;}
+.edu-lbl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:9px;}
+.edu-deg{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--white);margin-bottom:7px;}
+.edu-sch{font-size:12px;color:var(--cream-dim);}
+.edu-yr{display:inline-block;margin-top:13px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);border:1px solid var(--border);padding:3px 11px;}
+.edu-big{font-family:'Playfair Display',serif;font-size:50px;font-weight:700;color:var(--gold);line-height:1;}
+.edu-big small{font-size:15px;color:var(--cream-dim);font-family:'Jost',sans-serif;}
+.edu-big-sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--cream-dim);margin-top:7px;}
+.edu-bar{height:3px;background:var(--border-dim);margin-top:18px;border-radius:2px;overflow:hidden;}
+.bar-fill{height:100%;width:80%;background:linear-gradient(90deg,var(--gold),var(--gold-light));transform:scaleX(0);transform-origin:left;transition:transform 1.3s cubic-bezier(.4,0,.2,1) .4s;border-radius:2px;}
+.edu-bar-txt{font-size:10px;color:var(--cream-dim);margin-top:6px;}
+
+/* ─── CONTACT ─── */
+.ct-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+.ct-quote{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:300;font-style:italic;line-height:1.65;color:var(--cream-dim);border-left:2px solid var(--gold);padding-left:22px;margin-bottom:30px;}
+.ct-rows{display:flex;flex-direction:column;}
+.ct-row{display:flex;align-items:center;gap:15px;padding:17px 0;border-bottom:1px solid var(--border-dim);text-decoration:none;color:var(--cream);transition:padding-left .3s;}
+.ct-row:hover{padding-left:8px;}
+.ct-icon{width:42px;height:42px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;transition:all .22s;}
+.ct-row:hover .ct-icon{border-color:var(--gold);background:var(--gold-pale);}
+.ct-lbl{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
+.ct-val{font-size:14px;color:var(--cream);}
+.avail-card{background:var(--navy-card);border:1px solid var(--border);padding:30px;position:relative;margin-top:22px;}
+.avail-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);}
+.avail-hdr{display:flex;align-items:center;gap:10px;margin-bottom:11px;}
+.avail-em{font-size:23px;}
+.avail-ttl{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--white);}
+.avail-txt{font-size:13px;color:var(--cream-dim);line-height:1.8;margin-bottom:18px;}
+.avail-tags{display:flex;flex-wrap:wrap;gap:7px;}
+.atag{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border:1px solid var(--border);color:var(--cream-dim);transition:all .2s;cursor:default;}
+.atag:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-pale);}
+
+/* ─── FOOTER ─── */
+footer{position:relative;z-index:1;background:var(--navy);border-top:1px solid var(--border-dim);padding:24px 64px;display:flex;justify-content:space-between;align-items:center;}
+.f-brand{font-family:'Playfair Display',serif;font-size:14px;color:var(--cream-dim);}
+.f-brand span{color:var(--gold);}
+.f-right{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--cream-dim);opacity:.4;}
+
+/* ─── TOAST ─── */
+#toast{position:fixed;bottom:30px;right:30px;background:var(--gold);color:var(--navy);padding:12px 22px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;z-index:9999;transform:translateY(100px);opacity:0;transition:all .38s cubic-bezier(.4,0,.2,1);border-radius:2px;pointer-events:none;}
+
+/* ─── PARTICLES ─── */
+.ptcl{position:fixed;border-radius:50%;pointer-events:none;z-index:0;background:var(--gold);opacity:0;animation:pu linear infinite;}
+@keyframes pu{0%{opacity:0;transform:translateY(0) scale(1);}10%{opacity:.32;}90%{opacity:.1;}100%{opacity:0;transform:translateY(-100vh) scale(.5);}}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1024px){
+  #hero,.exp-layout,.dm-layout,.ct-layout,.resume-card{grid-template-columns:1fr;gap:36px;}
+  .ex-grid,.edu-grid,.sk-grid{grid-template-columns:1fr 1fr;}
+  .ach-row{grid-template-columns:1fr;}
+  nav{padding:0 22px;} .n-links{display:none;}
+  .sec{padding:68px 22px;} #hero{padding:88px 22px 52px;}
+  footer{padding:22px;flex-direction:column;gap:10px;}
+  .sec-hd{flex-direction:column;gap:11px;} .sec-sub{text-align:left;max-width:100%;}
+  .resume-card::after{display:none;}
+}
+@media(max-width:640px){
+  .ex-grid,.edu-grid,.sk-grid{grid-template-columns:1fr;}
+  .h-stats{flex-direction:column;}
+  .hst{border-right:none;border-bottom:1px solid var(--border-dim);}
+  h1{font-size:36px;}
+}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-ring"></div>
+<div class="orb o1"></div>
+<div class="orb o2"></div>
+
+<!-- ═══ NAV ═══ -->
+<nav id="nav">
+  <div class="n-brand">
+    <span class="n-name">Avnish Kumar</span>
+    <span class="n-sub">QA · Investment Banking</span>
+  </div>
+  <div class="n-links">
+    <a href="#expertise">Expertise</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#domain">Domain</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="btn btn-g" style="font-size:10px;padding:8px 20px;">✉ Hire Me</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero" class="fs">
+  <div>
+    <div class="h-badge-row">
+      <span class="badge bg-live pulse-green"><span class="dot-live blink"></span>Open to Work</span>
+      <span class="badge bg-gold">💼 Investment Banking QA</span>
+      <span class="badge bg-gold">📍 New Delhi</span>
+    </div>
+    <h1>Quality That<br/>Guards Every<br/><em>Transaction</em> <span class="shake">🛡️</span></h1>
+    <p class="h-desc">2+ years specializing in QA for SEI Wealth Management platforms. Expert in automation, API validation &amp; financial domain testing — <strong style="color:var(--gold)">90%+ defect detection rate</strong> and multiple client appreciation awards.</p>
+    <div class="h-ctas">
+      <a href="#experience" class="btn btn-g">🔍 View My Work</a>
+      <a href="#resume" class="btn btn-o">📄 Download Resume</a>
+      <a href="#contact" class="btn btn-gh">📬 Let's Talk</a>
+    </div>
+    <div class="h-stats">
+      <div class="hst"><div class="hst-n">90%+</div><div class="hst-l">Defect Detection</div></div>
+      <div class="hst"><div class="hst-n">2+</div><div class="hst-l">Years Experience</div></div>
+      <div class="hst"><div class="hst-n">SEI</div><div class="hst-l">Banking Platform</div></div>
+      <div class="hst"><div class="hst-n">★★★</div><div class="hst-l">Client Awards</div></div>
+    </div>
+  </div>
+  <div class="dash">
+    <div class="dash-hdr">
+      <span class="dash-title">📊 Performance Dashboard</span>
+      <span class="dash-live"><span class="dash-ld blink"></span>Live</span>
+    </div>
+    <div class="mrow"><span class="ml">🎯 Defect Detection</span><span class="mv">90%<small>+</small></span></div>
+    <div class="mrow"><span class="ml">⏱️ Experience</span><span class="mv">2+<small>yrs</small></span></div>
+    <div class="mrow"><span class="ml">🏦 Domain</span><span class="mv" style="font-size:16px;">SEI Wealth</span></div>
+    <div class="mrow"><span class="ml">🤖 Automation</span><span class="mtag tag-g">Active</span></div>
+    <div class="mrow"><span class="ml">🎓 Education</span><span class="mv" style="font-size:15px;">B.Tech CS</span></div>
+    <div class="mrow"><span class="ml">📈 CGPA</span><span class="mv">8.0<small>/10</small></span></div>
+    <div class="mrow" style="border:none;"><span class="ml">🏆 Client Awards</span><span class="mtag tag-o">Multiple</span></div>
+    <div class="dash-foot"><span class="dot-live blink" style="background:var(--gold);flex-shrink:0;"></span>Available for new Fintech / IB QA roles</div>
+  </div>
+</section>
+
+<!-- ═══ EXPERTISE ═══ -->
+<section id="expertise" class="sec alt fs">
+  <div class="sec-hd">
+    <div><div class="sec-num">01 — Capabilities</div><h2>Core <em>Expertise</em></h2></div>
+    <p class="sec-sub">Battle-tested skills forged in high-stakes investment banking systems.</p>
+  </div>
+  <div class="ex-grid stg">
+    <div class="ex-cell si"><span class="card-badge wig">🔥 Core</span><span class="ex-icon">🧪</span><div class="ex-no">01</div><div class="ex-title">Test Engineering</div><p class="ex-body">Manual &amp; automation-first — functional, regression, smoke, UAT, integration &amp; E2E cycles.</p><div class="ex-tags"><span class="etag">Manual</span><span class="etag">Automation</span><span class="etag">Regression</span><span class="etag">UAT</span><span class="etag">E2E</span></div></div>
+    <div class="ex-cell si"><span class="card-badge wig">⚡ Advanced</span><span class="ex-icon">🤖</span><div class="ex-no">02</div><div class="ex-title">Automation Framework</div><p class="ex-body">Selenium WebDriver + Java with TestNG &amp; Maven, integrated into Jenkins CI/CD pipelines.</p><div class="ex-tags"><span class="etag">Selenium</span><span class="etag">Java</span><span class="etag">TestNG</span><span class="etag">Maven</span><span class="etag">Jenkins</span></div></div>
+    <div class="ex-cell si"><span class="card-badge wig">🔗 Key</span><span class="ex-icon">🌐</span><div class="ex-no">03</div><div class="ex-title">API &amp; Data Validation</div><p class="ex-body">REST API testing via Postman + SOAP UI with deep SQL back-end verification.</p><div class="ex-tags"><span class="etag">Postman</span><span class="etag">SOAP UI</span><span class="etag">SQL</span><span class="etag">Data Integrity</span></div></div>
+    <div class="ex-cell si"><span class="card-badge wig">🏃 Active</span><span class="ex-icon">⚡</span><div class="ex-no">04</div><div class="ex-title">Agile Delivery</div><p class="ex-body">Full Scrum — standups, sprint planning, defect tracking &amp; RCA in JIRA and HP ALM.</p><div class="ex-tags"><span class="etag">Scrum</span><span class="etag">JIRA</span><span class="etag">HP ALM</span><span class="etag">RCA</span></div></div>
+    <div class="ex-cell si"><span class="card-badge wig">📊 Perf</span><span class="ex-icon">📈</span><div class="ex-no">05</div><div class="ex-title">Performance Testing</div><p class="ex-body">Load &amp; benchmark analysis with Apache JMeter under peak financial transaction volumes.</p><div class="ex-tags"><span class="etag">JMeter</span><span class="etag">Load Testing</span><span class="etag">Benchmarking</span></div></div>
+    <div class="ex-cell si"><span class="card-badge wig">🌟 Awarded</span><span class="ex-icon">🤝</span><div class="ex-no">06</div><div class="ex-title">Client Engagement</div><p class="ex-body">Direct stakeholder collaboration — multiple formal appreciation letters for quality ownership.</p><div class="ex-tags"><span class="etag">Ownership</span><span class="etag">Stakeholder Mgmt</span><span class="etag">Reporting</span></div></div>
+  </div>
+</section>
+
+<!-- ═══ TICKER ═══ -->
+<div class="ticker">
+  <div class="t-chip">🛠 Stack</div>
+  <div class="t-track"><div class="t-inner">
+    <div class="ti">Selenium WebDriver<div class="td"></div></div><div class="ti">TestNG<div class="td"></div></div><div class="ti">JIRA<div class="td"></div></div><div class="ti">HP ALM<div class="td"></div></div><div class="ti">Postman<div class="td"></div></div><div class="ti">Maven<div class="td"></div></div><div class="ti">Jenkins CI/CD<div class="td"></div></div><div class="ti">SQL<div class="td"></div></div><div class="ti">JMeter<div class="td"></div></div><div class="ti">Git / GitHub<div class="td"></div></div><div class="ti">SOAP UI<div class="td"></div></div><div class="ti">TestRail<div class="td"></div></div><div class="ti">Bugzilla<div class="td"></div></div><div class="ti">Python<div class="td"></div></div><div class="ti">JavaScript<div class="td"></div></div>
+    <div class="ti">Selenium WebDriver<div class="td"></div></div><div class="ti">TestNG<div class="td"></div></div><div class="ti">JIRA<div class="td"></div></div><div class="ti">HP ALM<div class="td"></div></div><div class="ti">Postman<div class="td"></div></div><div class="ti">Maven<div class="td"></div></div><div class="ti">Jenkins CI/CD<div class="td"></div></div><div class="ti">SQL<div class="td"></div></div><div class="ti">JMeter<div class="td"></div></div><div class="ti">Git / GitHub<div class="td"></div></div><div class="ti">SOAP UI<div class="td"></div></div><div class="ti">TestRail<div class="td"></div></div><div class="ti">Bugzilla<div class="td"></div></div><div class="ti">Python<div class="td"></div></div><div class="ti">JavaScript<div class="td"></div></div>
+  </div></div>
+</div>
+
+<!-- ═══ EXPERIENCE ═══ -->
+<section id="experience" class="sec fs">
+  <div class="sec-hd">
+    <div><div class="sec-num">02 — Work History</div><h2>Professional <em>Experience</em></h2></div>
+    <p class="sec-sub">Delivering QA excellence in a high-pressure investment banking environment.</p>
+  </div>
+  <div class="exp-layout">
+    <div>
+      <div class="exp-co-card">
+        <div class="exp-co-name">🏢 Coforge</div>
+        <div class="exp-co-loc">Noida, Uttar Pradesh</div>
+        <div class="exp-dur">Nov 2023 — Present</div>
+        <div class="exp-curr pulse-green"><span class="dot-live blink"></span>Currently Here</div>
+      </div>
+      <p class="exp-quote">"Known for ownership, analytical thinking, and QA discipline that consistently earns client trust."</p>
+    </div>
+    <div>
+      <div class="exp-role">Software Engineer <em style="color:var(--gold);font-family:'Playfair Display',serif;font-style:italic;font-weight:400;">— QA</em></div>
+      <div class="exp-rows stg">
+        <div class="exp-row si"><div class="exp-dia"></div><p class="exp-txt">Performed <strong>manual and automation testing</strong> for SEI Investment Banking projects across the full STLC. <span class="wbadge wig">🔄 Full Cycle</span></p></div>
+        <div class="exp-row si"><div class="exp-dia"></div><p class="exp-txt">Handled critical processes: <strong>Cash, Currency Sweep, Currency Gain/Loss</strong> &amp; <strong>Idle Currency Interest</strong>. <span class="wbadge wig">💰 Finance</span></p></div>
+        <div class="exp-row si"><div class="exp-dia"></div><p class="exp-txt">Achieved <strong>90%+ defect detection rate</strong> — preventing high-severity issues from reaching production clients. <span class="wbadge wig">🎯 90%+</span></p></div>
+        <div class="exp-row si"><div class="exp-dia"></div><p class="exp-txt">Developed <strong>Selenium (Java)</strong> scripts with TestNG &amp; Maven integrated into Jenkins CI/CD pipelines. <span class="wbadge wig">🤖 Auto</span></p></div>
+        <div class="exp-row si"><div class="exp-dia"></div><p class="exp-txt">Conducted <strong>API testing</strong> via Postman and deep SQL back-end validation for end-to-end data fidelity. <span class="wbadge wig">🌐 API</span></p></div>
+        <div class="exp-row si"><div class="exp-dia"></div><p class="exp-txt">Full <strong>Agile/Scrum</strong> delivery — daily standups, sprint planning, JIRA &amp; HP ALM defect management.</p></div>
+        <div class="exp-row si"><div class="exp-dia"></div><p class="exp-txt">Received <strong>multiple client appreciation emails</strong> for ownership and high-quality delivery under pressure. <span class="wbadge wig">🏆 Awarded</span></p></div>
+      </div>
+      <div class="ach-row">
+        <div class="ach-cell"><span class="ach-em float">🎯</span><div class="ach-n">90%+</div><div class="ach-l">Defect Detection</div></div>
+        <div class="ach-cell"><span class="ach-em float">📅</span><div class="ach-n">2+</div><div class="ach-l">Years IB Domain</div></div>
+        <div class="ach-cell"><span class="ach-em float">🏆</span><div class="ach-n">★★★</div><div class="ach-l">Client Awards</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SKILLS ═══ -->
+<section id="skills" class="sec alt fs">
+  <div class="sec-hd">
+    <div><div class="sec-num">03 — Arsenal</div><h2>Skills &amp; <em>Technologies</em></h2></div>
+    <p class="sec-sub">A full toolkit spanning testing, development &amp; financial domain knowledge.</p>
+  </div>
+  <div class="sk-grid stg">
+    <div class="sk-card si"><span class="sk-badge wig">Core</span><div class="sk-hdr"><span class="sk-em float">🧪</span><span class="sk-title">Testing Methodologies</span></div><div class="sk-tags"><span class="stag">Manual</span><span class="stag">Automation</span><span class="stag">Functional</span><span class="stag">Regression</span><span class="stag">Smoke</span><span class="stag">Sanity</span><span class="stag">Integration</span><span class="stag">System</span><span class="stag">UAT</span><span class="stag">E2E</span><span class="stag">Exploratory</span><span class="stag">Performance</span></div></div>
+    <div class="sk-card si"><span class="sk-badge wig">Advanced</span><div class="sk-hdr"><span class="sk-em float">🛠</span><span class="sk-title">Tools &amp; Frameworks</span></div><div class="sk-tags"><span class="stag">Selenium WebDriver</span><span class="stag">TestNG</span><span class="stag">JUnit</span><span class="stag">Maven</span><span class="stag">Jenkins</span><span class="stag">JIRA</span><span class="stag">HP ALM</span><span class="stag">Bugzilla</span><span class="stag">TestRail</span><span class="stag">Postman</span><span class="stag">SOAP UI</span><span class="stag">Git</span></div></div>
+    <div class="sk-card si"><span class="sk-badge wig">Code</span><div class="sk-hdr"><span class="sk-em float">💻</span><span class="sk-title">Programming &amp; DB</span></div><div class="sk-tags"><span class="stag">Java</span><span class="stag">Python</span><span class="stag">JavaScript</span><span class="stag">SQL Joins</span><span class="stag">Stored Procedures</span><span class="stag">Data Validation</span></div></div>
+    <div class="sk-card si"><span class="sk-badge wig">Agile</span><div class="sk-hdr"><span class="sk-em float">⚡</span><span class="sk-title">Process &amp; Soft Skills</span></div><div class="sk-tags"><span class="stag">Agile / Scrum</span><span class="stag">Sprint Planning</span><span class="stag">SDLC</span><span class="stag">STLC</span><span class="stag">RCA</span><span class="stag">Defect Life Cycle</span><span class="stag">Client Interaction</span><span class="stag">Ownership</span></div></div>
+  </div>
+</section>
+
+<!-- ═══ DOMAIN ═══ -->
+<section id="domain" class="sec fs">
+  <div class="sec-hd">
+    <div><div class="sec-num">04 — Industry</div><h2>Domain <em>Specialisation</em></h2></div>
+    <p class="sec-sub">Deep IB operations knowledge that speeds up defect discovery.</p>
+  </div>
+  <div class="dm-layout">
+    <p class="dm-intro">At the intersection of <strong>quality engineering</strong> and <strong>wealth management</strong> — hands-on experience in the financial processes institutional clients depend on every day. 🏦</p>
+    <div class="dm-list stg">
+      <div class="dm-row si"><span class="dm-gem">💵</span><div><div class="dm-name">Cash Processing</div><div class="dm-sub">Core cash movement, settlement &amp; reconciliation flows</div></div></div>
+      <div class="dm-row si"><span class="dm-gem">🔄</span><div><div class="dm-name">Currency Sweep</div><div class="dm-sub">Multi-currency liquidity management &amp; automated sweeping</div></div></div>
+      <div class="dm-row si"><span class="dm-gem">📉</span><div><div class="dm-name">Currency Gain / Loss</div><div class="dm-sub">FX valuation, realised/unrealised P&amp;L accuracy testing</div></div></div>
+      <div class="dm-row si"><span class="dm-gem">💹</span><div><div class="dm-name">Idle Interest</div><div class="dm-sub">Interest accrual calculations and ledger posting validation</div></div></div>
+      <div class="dm-row si"><span class="dm-gem">⚖️</span><div><div class="dm-name">Reconciliation</div><div class="dm-sub">Position &amp; cash reconciliation integrity across systems</div></div></div>
+      <div class="dm-row si"><span class="dm-gem">💸</span><div><div class="dm-name">Payment Processing</div><div class="dm-sub">End-to-end payment lifecycle and STP corridor testing</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RESUME DOWNLOAD ═══ -->
+<section id="resume" class="sec alt fs">
+  <div class="sec-hd">
+    <div><div class="sec-num">05 — Documents</div><h2>Download <em>Resume</em></h2></div>
+  </div>
+  <div class="resume-card">
+    <div class="resume-card::before shimmer-bar"></div>
+    <div>
+      <div class="r-eyebrow">📄 Latest Version · 2025</div>
+      <div class="r-title">Avnish Kumar<br/>QA Engineer — Investment Banking</div>
+      <p class="r-desc">2+ years in SEI wealth management platform QA. Automation-first mindset with deep financial domain expertise. 90%+ defect detection and multiple client appreciation awards.</p>
+      <div class="r-tags">
+        <span class="r-tag">🎯 90%+ Detection</span>
+        <span class="r-tag">🤖 Selenium + Java</span>
+        <span class="r-tag">🏦 SEI IB Domain</span>
+        <span class="r-tag">⚡ 2+ Yrs</span>
+        <span class="r-tag">🏆 Client Awarded</span>
+      </div>
+    </div>
+    <div class="r-btns">
+      <button class="btn-dl" id="dl-btn" onclick="downloadResume()">
+        <span class="dl-bounce">⬇️</span> Download PDF
+      </button>
+      <div class="dl-count-wrap">
+        <span class="dl-count" id="dl-count">Loading count...</span>
+      </div>
+      <button class="btn btn-o" onclick="copyEmail()" style="margin-top:8px;">📋 Copy Email</button>
+      <a href="mailto:avnishcse1@gmail.com?subject=QA Engineer Opportunity&body=Hi Avnish, I came across your portfolio and would like to discuss an opportunity." class="btn btn-gh">✉️ Email Directly</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EDUCATION ═══ -->
+<section id="education" class="sec fs">
+  <div class="sec-hd">
+    <div><div class="sec-num">06 — Background</div><h2>Education &amp; <em>Formation</em></h2></div>
+  </div>
+  <div class="edu-grid stg">
+    <div class="edu-cell si"><span class="edu-em float">🎓</span><div class="edu-lbl">Degree</div><div class="edu-deg">B.Tech — Computer Science</div><div class="edu-sch">Kurukshetra University</div><div class="edu-yr">Class of 2023</div></div>
+    <div class="edu-cell si"><span class="edu-em float">📊</span><div class="edu-lbl">Academic Performance</div><div class="edu-big">8.0<small> / 10</small></div><div class="edu-big-sub">CGPA · First Class</div><div class="edu-bar"><div class="bar-fill"></div></div><div class="edu-bar-txt">Top academic standing</div></div>
+    <div class="edu-cell si"><span class="edu-em float">💡</span><div class="edu-lbl">Specialisation</div><div class="edu-deg">Computer Science Engineering</div><div class="edu-sch">Software Testing · Automation · Finance Tech</div><div class="edu-yr">4 Year Programme</div></div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" class="sec alt fs">
+  <div class="sec-hd">
+    <div><div class="sec-num">07 — Let's Talk</div><h2>Get In <em>Touch</em></h2></div>
+    <p class="sec-sub">Every great hire starts with a conversation.</p>
+  </div>
+  <div class="ct-layout">
+    <div>
+      <p class="ct-quote">"In investment banking, quality is not just a process — it is a promise to every client whose assets depend on the system." 🏦</p>
+      <div class="ct-rows">
+        <a href="mailto:avnishcse1@gmail.com" class="ct-row"><div class="ct-icon">✉️</div><div><div class="ct-lbl">Email</div><div class="ct-val">avnishcse1@gmail.com</div></div></a>
+        <a href="tel:+919773783363" class="ct-row"><div class="ct-icon">📱</div><div><div class="ct-lbl">Phone</div><div class="ct-val">+91 97737 83363</div></div></a>
+        <div class="ct-row" style="cursor:default;"><div class="ct-icon">📍</div><div><div class="ct-lbl">Location</div><div class="ct-val">New Delhi, India</div></div></div>
+      </div>
+    </div>
+    <div class="avail-card">
+      <div class="avail-hdr"><span class="avail-em float">🚀</span><span class="avail-ttl">Open to Opportunities</span></div>
+      <p class="avail-txt">Actively exploring QA Engineering, SDET, or Test Automation roles — particularly in financial services, wealth management, or investment banking where deep domain knowledge adds real value.</p>
+      <div class="avail-tags">
+        <span class="atag">Full-Time</span><span class="atag">Contract</span><span class="atag">Hybrid</span>
+        <span class="atag">On-site</span><span class="atag">🏦 IB Domain</span>
+        <span class="atag">💹 Fintech</span><span class="atag">🌍 Relocation OK</span>
+      </div>
+      <div style="margin-top:20px;">
+        <a href="mailto:avnishcse1@gmail.com?subject=QA Engineer Opportunity" class="btn btn-g">📩 Send Opportunity</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="f-brand">Avnish Kumar · <span>QA Engineer</span> · Investment Banking</div>
+  <div class="f-right">New Delhi · 2025 🇮🇳</div>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+// ─── Embedded PDF (base64) ───
+const PDF_B64 = "JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgaHR0cDovL3d3dy5yZXBvcnRsYWIuY29tCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUgo+PgplbmRvYmoKMiAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjEgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iagozIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YyIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNCAwIG9iago8PAovQ29udGVudHMgOCAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCA3IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago1IDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgNyAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL0F1dGhvciAoXChhbm9ueW1vdXNcKSkgL0NyZWF0aW9uRGF0ZSAoRDoyMDI1MTEyNDA1MzIzNCswMCcwMCcpIC9DcmVhdG9yIChcKHVuc3BlY2lmaWVkXCkpIC9LZXl3b3JkcyAoKSAvTW9kRGF0ZSAoRDoyMDI1MTEyNDA1MzIzNCswMCcwMCcpIC9Qcm9kdWNlciAoUmVwb3J0TGFiIFBERiBMaWJyYXJ5IC0gd3d3LnJlcG9ydGxhYi5jb20pIAogIC9TdWJqZWN0IChcKHVuc3BlY2lmaWVkXCkpIC9UaXRsZSAoXChhbm9ueW1vdXNcKSkgL1RyYXBwZWQgL0ZhbHNlCj4+CmVuZG9iago3IDAgb2JqCjw8Ci9Db3VudCAxIC9LaWRzIFsgNCAwIFIgXSAvVHlwZSAvUGFnZXMKPj4KZW5kb2JqCjggMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMjA1Ngo+PgpzdHJlYW0KR2F0bTw5bG8jWiZBQHNCb09WPiU3VVFBPUo1OylTMzdwdG0vQCloXTE2ci0zN0ZMK14mVlNbNXEhQitHI29qTC9mOVdKMSxjKEVhaD5SMjA/KVpfU0NIcWInaSs8QjYrJ2lqTzBWM2ZBPWhUTFkhdDwwczAuNjJNYV05P2FRWXM0ZW1eMktucjFSX1A6dCQpKmY/TVMhTVwyRFhLQS5fT29mPHNPbFJsXEBCNWpKMjlWJylyKnVQI0xmIl4yJFkocT5gVy8jXWEhSkBOLT9ySVNDcF42altTLV1GVEU/SCtyJFFoRF5GQlllOVg1LkdvMj1MZ1Y7Pj9UbEluXy43X1EjOGFkVi5EW2hjRSRKWzYqaTFAXGkoPENGcylANkxeLUQmUXRHKGRIa1tyZzJZS0YqYDt0RjVkRmVVbHJ0ODFuUG1Hcy5wKio2SzFJSSVCI1w5X0VRc3AiKz1Gc1MwIjtOVnAsUnBHXVlQLVs+XU9bKipaTVV0blFhIjI9PUV0VXBQZkFoVEkyKmI5bUpVU3FUTi9fP2EqQilpVzVKQmJpL2JINCwlUV1BQWVuUiQ9Ym5gRytRdUEqcUVEWU9UVGZEYVcpLyJidFEsUWs3MlQoX3NCQWc9PClrY21AZUtOXDFNdDc3UFRCJk1ZZzlUJ1JjblFgczJuRiJHPVRGSzQhXDcwdUwsTS1qYmw4S0gwbmQ6ZC9eIzpfWUhEViNnMFE7ZCtvS29VMSZwTTxWKzlLViFoQzNvUlhXU2wkLFFUPnRzZW5tS1ZeWi5GS2gzVCxuXVpUQW9jQE9Ma3UpQTZNcVZPWDsxMUFRVTxsTyQrbEt0SyF1T1lZRHRNRS1JKGlGQ0pqOkYjJ2VIcScmP1FAbS86Rm4rU0U2Kmw0SnEqPnJ0LVdGLTc0NlIsLEhAOkpDTmA1Sz9kczJdKT05dTIlQlM8Z2pyazZOVVxBbzpuTVtPdVRWLlg3J3E2NGdUS1s3TmpLcGA4RUwtcU8lKjphQG4uJlBbOWNrYG5GPT4nYGY+MiYkKGV0R0JGPzheViNCX1FsYGhIWWAtL3A3Ky5ganNlcjNFXS49ZiplYWJaYVMybGk6bFlgaSshQygxcSckJ2pBVjxWNkBRLCpYQFVYRylUdVdxMF5JX0VNImpgcS5qKlZPKWx1UFlyT2s6OU85XkFwT1ZSZmpoOSJVPCwqWmIwV1wpW0VZLTg7PGwkVTMmXVFddWZgNzM3XSk1PElRJC1QSXU9Q1hEbVZzbVFnTHAqVkMsSE1iaV5ecEciPSg5OU8wYTtqWiZXYjBuaSlTTSEob0E7UlU2S0pRbm0oUUFoJ0NIVmZHPyhyb1NBdUVDVypsaGglPiNWM2NJYGhuYCpSPT5hayhdbiVTL0E8LzdlSzdgNDRTJk9DYU5yTDwqbjdTTlgqbzlFRWMqKFliZF5WcCc+IV9cNUhNc3BPKl50SGI0STphPm9OPnJxakRFKE9mWCUlQWcuXmEkWVdtYmUjR1o+QitiJ0t0IioqVWYiXUhUXCRTcXU2LS10RUFyS2UvOE9JPGttPiR1KVpkWz90RitLOmdwcC11cFxGYzNIKV89VjxTIWpLLGlhNl1VY2RfaWJmJT5GSzZjcG0tKFZwQzAmKmkmOWtDW3BxUj5mUTMuWmtPbFAocSxCa1VebmJRUG9GZSFeZXJiR19TMWg9UkRwY2VKS0BGIy5APVVuciErWXRkWl5eMihZLiolIkBDaUFALE06X11nKiIpOlhTLThuMlckVEhTdCkvV0JqTy5bLTFQRDBpWFVAXFtLPFJUaGo2b05mSjxfSGVkYixdMmhAPDRLISRoQUpCNWknLz8+STEuamN1WC5QVF4xUEw/N0FOQyw0amQ9LzhNaDlmXGFIbEpFa2RDPU0vNkVUXlokYzcpK0UpWXFnL0ZBZyg5cFBRaypgKTlVLltFVTJLZC1MP1FWYW05KWxgITRGcm81NGVGT1VgQllXXyZbUiQiUlUzJjJTME9WanQxbjFVNkBjTjowLy84XFRITCdCQVZZI0thVkdgOjIjVlJQI1E/SChHQiV0dT46InFXQjMrP1twO0JlVXRYO3U1SnJCLGBmUCRDRSokK0w7aUVMRFYiZi5tXE5fQyZqTVtoQjorOlpQSHFgVSc6V05DbjhrR01fKTUna0U4a2koTTtVWVxKQjRhL0VYTXFDZ0pYLF40J0FRalZGZiFvZkNNVTBzVGAnaSROdCo7YidKcyhMQW5aVXExSTJnVzpFW25RTks1NSdxalA3Iz83JCdEVU5nK05jO2IpbU8xYSRvRjRyb2JUJFRqNTZKaWlQZiQ8XmMuLm42QWJfUzNWV2suT2YuRkkqNF46YXQjNjZwUD4pOmpaLDBRcE1RTi9yJzdCPmhEKlNcNXN1XD06YHIrYzdIaTBtIW8ral89LExJTC5nZW1zZG5mW2o4RWYqUi1OKzFJYFE/O3BWb21KZSpHOlJnVjxDS01RLVhJWWIkXC1mNERHXHEsIyxIKEYkWiFkRyFINi0tXF5EP05USV40M0k9WktgWydJY1dULyw4SD5dWCtCVDlVKmohOyReTj1MT2NTXUZeVExcaTtaP1FKUXEpczVIWDc3QDtDazVIcC9gYFFeUWhjL2sya3JkXnJkL21Nb1t1IkluRUpyQHFVNjwnWUVHUSoiLDZPWzlYXlt1MD0/UC1HKkhlUVo/KjFwSEwvPT1zZ1kibio6QXQ+QmRVQ3V+PmVuZHN0cmVhbQplbmRvYmoKeHJlZgowIDkKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDczIDAwMDAwIG4gCjAwMDAwMDAxMTQgMDAwMDAgbiAKMDAwMDAwMDIyMSAwMDAwMCBuIAowMDAwMDAwMzMzIDAwMDAwIG4gCjAwMDAwMDA1MzYgMDAwMDAgbiAKMDAwMDAwMDYwNCAwMDAwMCBuIAowMDAwMDAwODg3IDAwMDAwIG4gCjAwMDAwMDA5NDYgMDAwMDAgbiAKdHJhaWxlcgo8PAovSUQgCls8YjZhMDljNzQ3NzkyZTZkZjRmYWQ4MTVjZDMwNjZhNDQ+PGI2YTA5Yzc0Nzc5MmU2ZGY0ZmFkODE1Y2QzMDY2YTQ0Pl0KJSBSZXBvcnRMYWIgZ2VuZXJhdGVkIFBERiBkb2N1bWVudCAtLSBkaWdlc3QgKGh0dHA6Ly93d3cucmVwb3J0bGFiLmNvbSkKCi9JbmZvIDYgMCBSCi9Sb290IDUgMCBSCi9TaXplIDkKPj4Kc3RhcnR4cmVmCjMwOTMKJSVFT0YK";
+
+// ─── Cursor ───
+const cur = document.getElementById('cur');
+const ring = document.getElementById('cur-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove', e => {
+  mx=e.clientX; my=e.clientY;
+  cur.style.left=mx+'px'; cur.style.top=my+'px';
+});
+(function tick(){ rx+=(mx-rx)*.12; ry+=(my-ry)*.12; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(tick); })();
+document.querySelectorAll('a,button,.ex-cell,.sk-card,.dm-row,.exp-row,.hst,input,textarea').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ cur.style.width='20px'; cur.style.height='20px'; ring.style.width='52px'; ring.style.height='52px'; });
+  el.addEventListener('mouseleave',()=>{ cur.style.width='11px'; cur.style.height='11px'; ring.style.width='34px'; ring.style.height='34px'; });
+});
+
+// ─── Nav shrink ───
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('small', window.scrollY > 60));
+
+// ─── Scroll fade ───
+const sections = document.querySelectorAll('.fs');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    const rect = e.target.getBoundingClientRect();
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      e.target.classList.remove('out');
+    } else if (rect.bottom < 0) {
+      e.target.classList.add('out');
+      e.target.classList.remove('in');
+    } else {
+      e.target.classList.remove('in','out');
+    }
+  });
+}, { threshold: 0.07, rootMargin: '-30px 0px -30px 0px' });
+sections.forEach(s => io.observe(s));
+window.addEventListener('load', () => document.getElementById('hero').classList.add('in'));
+
+// ─── Smooth scroll ───
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if(t) t.scrollIntoView({ behavior:'smooth', block:'start' });
+  });
+});
+
+// ─── Particles ───
+function spawnP(){
+  const p = document.createElement('div'); p.className='ptcl';
+  const s=Math.random()*3+1, d=Math.random()*12+8, dl=Math.random()*3;
+  p.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*window.innerWidth}px;bottom:0;animation-duration:${d}s;animation-delay:${dl}s;`;
+  document.body.appendChild(p);
+  setTimeout(()=>p.remove(),(d+dl)*1000);
+}
+setInterval(spawnP, 2200);
+
+// ─── Load download count from backend ───
+async function loadCount() {
+  try {
+    const r = await fetch('/api/track-download');
+    const d = await r.json();
+    const el = document.getElementById('dl-count');
+    if (d.total !== undefined) {
+      el.innerHTML = d.total > 0
+        ? `<b>${d.total.toLocaleString()}</b> download${d.total !== 1 ? 's' : ''} so far`
+        : 'Be the first to download!';
+    } else {
+      el.textContent = '';
+    }
+  } catch(e) {
+    document.getElementById('dl-count').textContent = '';
+  }
+}
+loadCount();
+
+// ─── Download resume (real PDF + track) ───
+async function downloadResume() {
+  const btn = document.getElementById('dl-btn');
+  btn.disabled = true;
+  btn.innerHTML = '⏳ Preparing...';
+  try {
+    // Decode and download the embedded PDF
+    const bin = atob(PDF_B64);
+    const arr = new Uint8Array(bin.length);
+    for(let i=0; i<bin.length; i++) arr[i] = bin.charCodeAt(i);
+    const blob = new Blob([arr], { type:'application/pdf' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'Avnish_Kumar_QA_Resume.pdf'; a.click();
+    URL.revokeObjectURL(url);
+    showToast('📥 Resume Downloaded!');
+    // Track download in backend
+    try {
+      const r = await fetch('/api/track-download', { method:'POST' });
+      const d = await r.json();
+      if(d.total !== undefined) {
+        document.getElementById('dl-count').innerHTML = `<b>${d.total.toLocaleString()}</b> download${d.total !== 1 ? 's' : ''} so far`;
+      }
+    } catch(e) {}
+  } catch(e) {
+    showToast('⚠️ Try again or email directly');
+  }
+  btn.disabled = false;
+  btn.innerHTML = '<span class="dl-bounce">⬇️</span> Download PDF';
+}
+
+// ─── Copy email ───
+function copyEmail() {
+  navigator.clipboard.writeText('avnishcse1@gmail.com')
+    .then(() => showToast('✅ Email Copied!'))
+    .catch(() => showToast('avnishcse1@gmail.com'));
+}
+
+// ─── Toast ───
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.transform = 'translateY(0)';
+  t.style.opacity = '1';
+  setTimeout(() => { t.style.transform='translateY(100px)'; t.style.opacity='0'; }, 2800);
+}
+</script>
+</body>
+</html>
